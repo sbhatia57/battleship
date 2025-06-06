@@ -97,12 +97,11 @@ class player:
     def __init__(self, name):
         self.name = name
         self.board = board(10)  # Default board size of 10x10
-        #print(self.board)  # Print the board for debugging purposes
         self.playerGrid = [[' ' for _ in range(10)] for _ in range(10)]
         self.hitsToWin = 17  # Total hits needed to win (5+4+3+3+2)
         self.hits = 0
         self.misses = 0
-        self.missiles = 42  # Number of missiles available
+        self.missiles = 60  # Number of missiles available
     
     def __repr__(self):
         return f"Player(name={self.name}, board=\n{self.board})"
@@ -174,9 +173,10 @@ class player:
                     self.hitsToWin = 17  # Reset hits to win
                     self.hits = 0
                     self.misses = 0
-                    self.missiles = 42  # Reset missiles
+                    self.missiles = 60  # Reset missiles
                     self.playerGrid = [[' ' for _ in range(10)] for _ in range(10)]
                     self.board = board(10)  # Reset the board
+                    print(self.board)
                 else:
                     print("Thanks for playing!")
                     break
@@ -192,15 +192,12 @@ class player:
                     self.hitsToWin = 17  # Reset hits to win
                     self.hits = 0
                     self.misses = 0
-                    self.missiles = 42  # Reset missiles
+                    self.missiles = 60  # Reset missiles
                     self.playerGrid = [[' ' for _ in range(10)] for _ in range(10)]
                     self.board = board(10)  # Reset the board
                 else:
                     print("Thanks for playing!")
                     break
-            
-
-
 
 player1 = player("Player 1")
 player1.game_loop()
